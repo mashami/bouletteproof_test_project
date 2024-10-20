@@ -1,18 +1,22 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## Getting Started Instructions 
 
-First, run the development server:
+### Clone the project on your local device
+- First go to terminal and write this command:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+git clone https://github.com/mashami/bouletteproof_test_project.git
+
+- Second go to the project path:
+
+cd bouletteproof_test_project 
+
+### Installing packages
+- After getting in the project path install yarn by write this command :
+  yarn install
+     or
+    yarn
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
