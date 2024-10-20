@@ -59,7 +59,7 @@ export const shadcnPlugin = plugin(
     theme: {
       container: {
         center: true,
-        padding: "1rem",
+        padding: "4rem",
         screens: {
           "2xl": "1400px"
         }
@@ -70,7 +70,7 @@ export const shadcnPlugin = plugin(
           ibm_plex_mono: [`var(--font-ibm-plex-mono)`],
           bricolage: [`var(--font-bricolage-grotesque)`],
           lexend: [`var(--font-lexend-Deca)`]
-          // --font-lexend-Deca
+          
         },
         colors: {
           border: "hsl(var(--border))",
