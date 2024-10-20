@@ -26,7 +26,7 @@ export const authOptions: NextAuthOptions = {
         try {
           const customers: CustomerType[] = await getAllCustomers()
 
-          // const customer: CustomerType | undefined = customersData.find(
+          // const customer: CustomerType | undefined = customers.find(
           //   (u) => u.email === email
           // )
 
