@@ -56,12 +56,12 @@ const signupPage = () => {
         return
       }
 
-      const resultemail = result.email
-      const resultPassword = result.password
+      // const resultemail = result.email
+      // const resultPassword = result.password
 
       const resultSign = await signIn("credentials", {
-        resultemail,
-        resultPassword,
+        email,
+        password,
         redirect: false
       })
 

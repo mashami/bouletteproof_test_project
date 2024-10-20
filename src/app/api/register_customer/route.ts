@@ -1,21 +1,15 @@
 import { HttpStatusCode } from "@/utils/enums"
+import { formatDate, getRandomInt } from "@/utils/helper"
 import { NextResponse } from "next/server"
 import Papa from "papaparse"
 
-// Helper function to format the date as MM/DD/YYYY
-const formatDate = (date: Date) => {
-  const month = (date.getMonth() + 1).toString().padStart(2, "0") // Months are 0-based
-  const day = date.getDate().toString().padStart(2, "0")
-  const year = date.getFullYear()
-  return `${month}/${day}/${year}`
-}
-
 export async function POST(req: Request) {
-  const { id, customer_name, email, password, retypedPassword } =
-    await req.json()
+  const { customer_name, email, password, retypedPassword } = await req.json()
+
+  console.log(customer_name, email, password, retypedPassword)
 
   // Check for missing fields
-  if (!id || !customer_name || !email || !password || !retypedPassword) {
+  if (!customer_name || !email || !password || !retypedPassword) {
     return NextResponse.json(
       { error: true, message: "All fields are required" },
       { status: HttpStatusCode.BAD_REQUEST }
@@ -32,6 +26,7 @@ export async function POST(req: Request) {
 
   // Generate the current date for signup_date and last_activity
   const currentDate = formatDate(new Date())
+  const id = getRandomInt(1, 100) //Generate random number
 
   try {
     const apiUrl = `https://my.api.mockaroo.com/customers.json?id=${id}&customer_name=${encodeURIComponent(
