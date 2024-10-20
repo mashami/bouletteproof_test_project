@@ -25,6 +25,27 @@ export const HomeSvg = ({ color }: SvgTypes) => {
   )
 }
 
+export const List = ({
+  width = 20,
+  height = 20,
+  className,
+  onClick
+}: SvgTypes) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      fill="#000000"
+      className={className}
+      onClick={onClick}
+      viewBox="0 0 256 256"
+    >
+      <path d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128ZM40,76H216a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24ZM216,180H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z" />
+    </svg>
+  )
+}
+
 export const LeavesSvg = ({ color }: SvgTypes) => {
   return (
     <svg
@@ -211,7 +232,6 @@ export const CloseSvg = ({ className, onClick }: SvgTypes) => {
     </svg>
   )
 }
-
 
 export const CaretRightSvg = ({ className, onClick }: SvgTypes) => {
   return (
