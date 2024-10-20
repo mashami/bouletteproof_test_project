@@ -7,7 +7,7 @@ const page = async () => {
   // const visitorsArray: VisitorsType2[] = visitors
   const visitorsArray: VisitorsType2[] = await getAllVisitors()
 
-  console.log("visitorsArray ===>", visitorsArray)
+  // console.log("visitorsArray ===>", visitorsArray)
 
   // Parse the string data into numbers
   const parsedVisitorsArray = visitorsArray.map((visitor) => ({

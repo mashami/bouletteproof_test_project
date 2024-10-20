@@ -1,15 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client"
 import { HomePageDescription } from "@/components/HomePageDescription"
-import {
-  AlarmSvg,
-  AlarmUserSvg,
-  ArrowRighSvg,
-  ClockUserSvg
-} from "@/components/Svg"
-import { Button } from "@/components/ui/button"
+import { AlarmSvg, AlarmUserSvg, ClockUserSvg } from "@/components/Svg"
 import { motion } from "framer-motion"
-import { useRouter } from "next/navigation"
 
 interface HomePageWidgetProps {
   totalVisitors: string
@@ -22,7 +15,7 @@ export default function HomePageWidget({
   bounceRate,
   totalVisitors
 }: HomePageWidgetProps) {
-  const router = useRouter()
+  // const router = useRouter()
   return (
     <main className="w-full h-full  md:pb-[168px] pb-12 bg-[#F3F3F3] relative">
       <div className="md:max-w-[1059px] w-full mx-auto pt-[71px] text-center space-y-[74px]">
@@ -39,12 +32,14 @@ export default function HomePageWidget({
             insights, you can better understand audience behavior and enhance
             their experience.
           </p>
-          <Button
-            text="Create account"
-            className="py-[14px] px-6 bg-black hover:bg-black/80 rounded-[32px] text-white"
-            svg={<ArrowRighSvg />}
-            onClick={() => router.push("/signup")}
-          />
+          <div className="flex items-center justify-center">
+            <div className="flex items-center space-x-2 text-2xl font-bold">
+              <p className="">Visit Analysis page by</p>
+              <a href="/details" className="text-[#006A86] ">
+                click here ✋
+              </a>
+            </div>
+          </div>
 
           <motion.svg
             width={69}
