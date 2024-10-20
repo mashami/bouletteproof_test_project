@@ -1,9 +1,10 @@
 "use client"
 
 import { cn } from "@/lib/utils"
+import { signOut } from "next-auth/react"
 import { usePathname, useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
-import { ArrowRighSvg, List } from "../Svg"
+import { ArrowRighSvg, List, LogOutSvg } from "../Svg"
 import { Button } from "../ui/button"
 
 const NavBar = () => {
@@ -55,19 +56,34 @@ const NavBar = () => {
       >
         VisitorVue
       </h1>
-      <div className="md:flex hidden items-center space-x-4">
-        <Button
-          text="Sign in"
-          className="py-[14px] px-6 bg-white hover:bg-white/80 rounded-[32px]"
-          onClick={() => router.push("/signin")}
-        />
-        <Button
-          text="Create account"
-          className="py-[14px] px-6 bg-black hover:bg-black/80 rounded-[32px] text-white"
-          svg={<ArrowRighSvg />}
-          onClick={() => router.push("/signup")}
-        />
-      </div>
+      {path === "/details" ? (
+        <div
+          className="relative group w-[40px] h-[40px] cursor-pointer rounded-full bg-[#F9F9FA] hover:bg-[#F9F9FA]/60 flex items-center justify-center"
+          onClick={() => {
+            signOut({ callbackUrl: "/signin" })
+          }}
+        >
+          <p className="hidden group-hover:flex absolute -top-6 text-[10px] text-black py-2">
+            Log out
+          </p>
+          <LogOutSvg />
+        </div>
+      ) : (
+        <div className="md:flex hidden items-center space-x-4">
+          <Button
+            text="Sign in"
+            className="py-[14px] px-6 bg-white hover:bg-white/80 rounded-[32px]"
+            onClick={() => router.push("/signin")}
+          />
+          <Button
+            text="Create account"
+            className="py-[14px] px-6 bg-black hover:bg-black/80 rounded-[32px] text-white"
+            svg={<ArrowRighSvg />}
+            onClick={() => router.push("/signup")}
+          />
+        </div>
+      )}
+
       <div className="md:hidden block">
         <List />
       </div>

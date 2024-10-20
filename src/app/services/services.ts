@@ -1,6 +1,6 @@
-import { CustomerType, registerType, VisitorsType } from "@/utils/types"
+import { CustomerType, registerType, VisitorsType2 } from "@/utils/types"
 
-export const getAllVisitors = async (): Promise<VisitorsType[]> => {
+export const getAllVisitors = async (): Promise<VisitorsType2[]> => {
   const response = await fetch(process.env.APP_URL + `/api/get_all_visitors`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
@@ -11,7 +11,7 @@ export const getAllVisitors = async (): Promise<VisitorsType[]> => {
     throw new Error("Failed to fetch visitors")
   }
 
-  const result: VisitorsType[] = await response.json()
+  const result: VisitorsType2[] = await response.json()
 
   return result
 }
@@ -46,6 +46,8 @@ export const register = async ({
   })
 
   const result: CustomerType = await response.json()
+
+  console.log("result ===>", result)
 
   return result
 }

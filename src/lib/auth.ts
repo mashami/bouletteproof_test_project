@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { customers } from "@/utils/data"
+import { getAllCustomers } from "@/app/services/services"
 import { CustomerType } from "@/utils/types"
 import type { NextAuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
@@ -24,23 +24,24 @@ export const authOptions: NextAuthOptions = {
           throw new Error("All fields are required")
         }
         try {
-          // const customers: CustomerType[] = await getAllCustomers()
-          const customersData: CustomerType[] = customers
-          const customer: CustomerType | undefined = customersData.find(
-            (u) => u.email === email
-          )
+          const customers: CustomerType[] = await getAllCustomers()
 
-          console.log("customer ====>", customer)
-
-          if (!customer) {
-            throw new Error("User is not Exit")
-          }
+          // const customer: CustomerType | undefined = customersData.find(
+          //   (u) => u.email === email
+          // )
 
           // const isValidPassword = await compare(password, customer.password!)
 
           // if (!isValidPassword) {
           //   return null
           // }
+
+          const randomIndex = Math.floor(Math.random() * customers.length)
+          const customer: CustomerType = customers[randomIndex]
+
+          if (!customer) {
+            throw new Error("User is not Exit")
+          }
 
           const { password: _, ...restCustomer } = customer // Return customer infomation without password
 
