@@ -100,7 +100,7 @@ const signinPage = () => {
               Password
             </label>
             <Input
-              type="text"
+              type="password"
               className="border border-[rgb(255,238,238)] p-2 rounded-md"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
