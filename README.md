@@ -39,4 +39,4 @@ For the sign-in process, I cannot verify user credentials against previously sav
 Given these limitations, the solution I implemented randomly selects a customer from the dataset when a user attempts to sign in. While this is a temporary workaround, it does not involve real authentication based on the user’s input, as Mockaroo isn’t designed for such functionality.
 
 
-So you can generate any information you want in order to sign in or sign upSo, you can generate any information you want for sign-in or sign-up, but it won’t be saved or verified. Mockaroo simply creates random data, and it doesn’t handle storing or authenticating user information.
+**So you can generate any information you want in order to sign in or sign upSo, you can generate any information you want for sign-in or sign-up, but it won’t be saved or verified. Mockaroo simply creates random data, and it doesn’t handle storing or authenticating user information.**
