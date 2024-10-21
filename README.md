@@ -17,24 +17,26 @@ cd bouletteproof_test_project
      or
     yarn
 
+## Run the Project
+- It must run on 3000 port if you make change, just remember to change also in .env " APP_URL "
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Landing Page 
+- on the landing page there is no authentication needed.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### detail page
+- for the details page you need to be authenticate to have access to visit the page
 
-## Learn More
+### Signin and Signup
 
-To learn more about Next.js, take a look at the following resources:
+Mockaroo is a data generation tool, not a database, and it does not store user input like emails and passwords. Its primary purpose is to generate random datasets, but it lacks the functionality to save or manage authentication processes, such as handling user sign-ups or logins.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+For the sign-up process, I am using an API from Mockaroo that generates a new customer record. However, since Mockaroo only generates random datasets, it doesn’t actually store or process the specific data I send, like user input (e.g., email, password). This means I cannot add new user-provided information to existing data, as Mockaroo doesn’t support this kind of persistent storage or updating.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+For the sign-in process, I cannot verify user credentials against previously saved data because Mockaroo does not store the information created during sign-up. Since Mockaroo cannot retain or authenticate the data, there’s no way to validate if the login details match the information used during sign-up.
 
-## Deploy on Vercel
+Given these limitations, the solution I implemented randomly selects a customer from the dataset when a user attempts to sign in. While this is a temporary workaround, it does not involve real authentication based on the user’s input, as Mockaroo isn’t designed for such functionality.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+So you can generate any information you want in order to sign in or sign upSo, you can generate any information you want for sign-in or sign-up, but it won’t be saved or verified. Mockaroo simply creates random data, and it doesn’t handle storing or authenticating user information.
