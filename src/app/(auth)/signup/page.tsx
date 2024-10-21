@@ -144,7 +144,7 @@ const signupPage = () => {
               Password
             </label>
             <Input
-              type="text"
+              type="password"
               className="border border-[rgb(255,238,238)] p-2 rounded-md"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -160,7 +160,7 @@ const signupPage = () => {
             </label>
 
             <Input
-              type="text"
+              type="password"
               className="border border-[#Fee] p-2 rounded-md"
               value={retypedPassword}
               onChange={(e) => setRetypedPassword(e.target.value)}
